@@ -46,11 +46,17 @@ Usage: $programName [options] [options to pass to build system]
   --gtk         Build the GTK+ port
 EOF
 
+print("programName:$programName\n");
+
+#取出命令行参数
 GetOptions(
     'help' => \$showHelp,
     'clean' => \$clean,
 );
+#--help 将把$showHelp 赋值成1 
+print("help:$showHelp  clean:$clean \n");
 
+#判断是否要显示help
 if ($showHelp) {
    print STDERR $usage;
    exit 1;
